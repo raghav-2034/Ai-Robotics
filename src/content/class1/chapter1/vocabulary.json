@@ -1,0 +1,32 @@
+[
+  {
+    "term": "Machine",
+    "pronunciation": "/məˈʃiːn/",
+    "definition": "A tool made by humans to help us do work.",
+    "exampleSentence": "A toaster is a machine that warms our bread."
+  },
+  {
+    "term": "Technology",
+    "pronunciation": "/tɛkˈnɒl.ə.dʒi/",
+    "definition": "Helper tools made by humans to make life easier.",
+    "exampleSentence": "We use technology like tablets to learn inside the classroom."
+  },
+  {
+    "term": "Tool",
+    "pronunciation": "/tuːl/",
+    "definition": "An object we use to do a job.",
+    "exampleSentence": "A pencil is a tool we use to draw picture shapes."
+  },
+  {
+    "term": "Power",
+    "pronunciation": "/ˈpaʊ.ər/",
+    "definition": "Energy that makes machines work, like electricity.",
+    "exampleSentence": "A vacuum cleaner needs power from a wall plug to clean."
+  },
+  {
+    "term": "Smart",
+    "pronunciation": "/smɑːrt/",
+    "definition": "Able to think, choose, or solve problems.",
+    "exampleSentence": "Miko is a smart robot because he can find his way around toys."
+  }
+]

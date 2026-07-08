@@ -1,13 +1,20 @@
 {
-  "title": "Meet Miko the Robot",
+  "title": "What is Technology?",
   "chapterNumber": 1,
   "readingTime": 10,
   "difficulty": "Beginner",
   "learningObjectives": [
-    "Identify what a robot is and what it does.",
-    "Name the basic parts of Miko the robot (Sensors, Brain, Motors).",
-    "Distinguish between a living being, a mechanical toy, and a smart robot."
+    "Identify machines around us at home.",
+    "Understand how machines make chores easier.",
+    "Locate examples of technology at school.",
+    "Contrast older tools with modern technology."
   ],
-  "keywords": ["Miko", "Robots", "Sensors", "Motors", "Computer Brain"],
-  "coverImage": ""
+  "keywords": ["Machine", "Technology", "Tool", "School", "Old vs New"],
+  "coverImage": "",
+  "sections": [
+    { "id": "1-1", "title": "Machines Around Us" },
+    { "id": "1-2", "title": "How Machines Help Us" },
+    { "id": "1-3", "title": "Technology at School" },
+    { "id": "1-4", "title": "Old vs New Technology" }
+  ]
 }

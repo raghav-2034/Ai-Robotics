@@ -1,0 +1,44 @@
+[
+  {
+    "id": "q1",
+    "question": "Which of these is a machine that keeps our food cold and fresh?",
+    "options": [
+      "A wooden pencil",
+      "A kitchen refrigerator",
+      "A green garden tree"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A refrigerator is a kitchen machine designed to keep milk and food cold so they do not spoil."
+  },
+  {
+    "id": "q2",
+    "question": "True or False: Machines are made by humans to make work easier.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Machines like vacuums, cars, and toasters are tools built by people to help save time and energy."
+  },
+  {
+    "id": "q3",
+    "question": "Which helper tool helps us clean a dirty floor the fastest?",
+    "options": [
+      "A hand broom",
+      "A vacuum cleaner",
+      "A washing machine"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A vacuum cleaner uses electrical power to suck up dust quickly, making it faster than a broom."
+  },
+  {
+    "id": "q4",
+    "question": "Is a tablet or computer in school a tool that helps us learn?",
+    "options": [
+      "Yes, it helps us read and play learning games",
+      "No, it is only for sleeping"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Classroom technology like tablets and projectors help teachers show pictures and help us learn new games."
+  }
+]
