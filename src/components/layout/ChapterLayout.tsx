@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, CircleCheck } from 'lucide-react';
-import { Book, Chapter } from '@/types/textbook';
+import { Book, ChapterRef } from '@/types/textbook';
 import { ChapterHero } from '@/components/textbook/ChapterHero';
 import { LearningObjectiveCard } from '@/components/cards/LearningObjectiveCard';
 import { SummaryCard } from '@/components/cards/SummaryCard';
@@ -11,11 +11,11 @@ import { Button } from '@/components/ui/button';
 
 interface ChapterLayoutProps {
   book: Book;
-  chapter: Chapter;
+  chapter: any;
   isChapterCompleted: boolean;
   onToggleCompletion: () => void;
-  prevChapter: Chapter | null;
-  nextChapter: Chapter | null;
+  prevChapter: ChapterRef | null;
+  nextChapter: ChapterRef | null;
   mounted: boolean;
   children: React.ReactNode;
 }

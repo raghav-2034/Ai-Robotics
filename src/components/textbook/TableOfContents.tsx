@@ -7,7 +7,7 @@ import { Chapter } from '@/types/textbook';
 import { cn } from '@/utils/cn';
 
 interface TableOfContentsProps {
-  chapters: Chapter[];
+  chapters: any[];
   classId: string;
   completedChapters?: string[];
   activeChapterId?: string;
@@ -65,7 +65,7 @@ export function TableOfContents({
                 {/* Subsections under active chapter */}
                 {isChapActive && chap.sections && (
                   <div className="pl-6 border-l border-border/80 ml-5.5 py-1 space-y-1">
-                    {chap.sections.map((sect) => {
+                    {chap.sections.map((sect: any) => {
                       const isSectActive = activeSectionId === sect.id;
                       return (
                         <a
@@ -154,7 +154,7 @@ export function TableOfContents({
               {/* Sub-sections indicators list */}
               {chap.sections && chap.sections.length > 0 && (
                 <div className="mt-4 pt-4 border-t border-border/50 flex flex-wrap gap-2">
-                  {chap.sections.map((sect) => (
+                  {chap.sections.map((sect: any) => (
                     <span
                       key={sect.id}
                       className="text-[11px] font-semibold text-muted-foreground px-2.5 py-1 rounded bg-muted/60"

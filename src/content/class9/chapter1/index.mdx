@@ -1,0 +1,57 @@
+<h2 id="1-1" className="text-xl md:text-2xl font-heading font-extrabold text-foreground tracking-tight border-l-4 border-primary pl-3 mb-6">What makes an AI Intelligent?</h2>
+
+At its core, Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions), and self-correction.
+
+<DidYouKnowCard title="The Turing Test" text="Proposed by Alan Turing in 1950, the Turing Test evaluates a machine's ability to exhibit intelligent behavior indistinguishable from that of a human. If an evaluator cannot reliably tell the machine from the human in text conversations, the machine passes the test!" />
+
+<QuizCard quiz={{
+  question: "In Machine Learning, what is the mathematical goal of training a model?",
+  options: [
+    "To hardcode every possible combination of inputs and outputs.",
+    "To find a function that maps inputs to outputs with minimal error.",
+    "To compress the input file sizes for faster transmission.",
+    "To eliminate the need for an operating system."
+  ],
+  correctOptionIndex: 1,
+  explanation: "Training an ML model is essentially optimization: finding a mapping function (often represented by weights in a neural network) that minimizes a loss function representing the error of predictions."
+}} />
+
+<div className="h-4" />
+
+<h2 id="1-2" className="text-xl md:text-2xl font-heading font-extrabold text-foreground tracking-tight border-l-4 border-primary pl-3 mb-6">Paradigms of Machine Learning</h2>
+
+Machine Learning algorithms are categorized based on how they learn. Let's explore the three main methodologies.
+
+<VocabularyCard vocabulary={{
+  term: "Gradient Descent",
+  definition: "An optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient.",
+  pronunciation: "Gray-dee-ent Dee-sent",
+  exampleSentence: "Neural networks use gradient descent during backpropagation to update their weights and reduce loss."
+}} />
+
+<ActivityCard activity={{
+  title: "Reinforcement Learning Simulation",
+  duration: "15 mins",
+  type: "individual",
+  instructions: [
+    "Imagine training a virtual robot dog to walk across a bridge.",
+    "Define the reward (+10 points for forward step, -5 for falling, -1 for standing still).",
+    "Write a brief pseudocode block outlining the training loop where the policy is updated based on cumulative rewards."
+  ]
+}} />
+
+<MiniProjectCard miniProject={{
+  title: "Classification Model Outline",
+  duration: "30 mins",
+  materials: [
+    "Pen, paper, or text editor",
+    "Access to a simple dataset (e.g. house features vs prices)"
+  ],
+  steps: [
+    "Select 3 parameters of a house (square footage, bedrooms, age).",
+    "Establish a heuristic threshold to classify the house as \"Luxury\" or \"Standard\".",
+    "Formulate a simple linear regression equation (y = w1x1 + w2x2 + w3x3 + b) and guess appropriate starting weights.",
+    "Perform manual calculation for one data point and describe how you would adjust the weights if the prediction was wrong."
+  ],
+  expectedOutput: "A complete mathematical model formulation with test calculations and manual weight update descriptions."
+}} />

@@ -12,8 +12,10 @@ const HTMLFlipBook = dynamic(
   { ssr: false }
 );
 
+import { getChapterComponent } from '@/lib/mdx';
+
 interface FlipbookViewProps {
-  chapter: Chapter;
+  chapter: any;
 }
 
 export function FlipbookView({ chapter }: FlipbookViewProps) {
@@ -28,6 +30,8 @@ export function FlipbookView({ chapter }: FlipbookViewProps) {
     setIsMounted(true);
   }, []);
 
+  const ChapterContent = getChapterComponent(chapter.classId, chapter.id);
+
   // Split chapter sections into digestible "pages" for the flipbook
   const pages: React.ReactNode[] = [];
 
@@ -39,12 +43,12 @@ export function FlipbookView({ chapter }: FlipbookViewProps) {
       </div>
       
       <div className="space-y-4">
-        <span className="text-5xl font-heading font-black opacity-30">CH {chapter.number}</span>
+        <span className="text-5xl font-heading font-black opacity-30">CH {chapter.chapterNumber}</span>
         <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tight leading-tight">
           {chapter.title}
         </h2>
         <p className="text-sm text-white/80 leading-relaxed">
-          {chapter.description}
+          Class {chapter.grade || '1'} Coursework
         </p>
       </div>
 
@@ -66,7 +70,7 @@ export function FlipbookView({ chapter }: FlipbookViewProps) {
           What we will discover in this chapter:
         </p>
         <ul className="space-y-3">
-          {chapter.learningObjectives.map((obj, idx) => (
+          {chapter.learningObjectives.map((obj: string, idx: number) => (
             <li key={idx} className="flex gap-2 text-xs md:text-sm font-medium text-foreground/90">
               <span className="text-primary font-bold shrink-0">•</span>
               <span>{obj}</span>
@@ -78,48 +82,33 @@ export function FlipbookView({ chapter }: FlipbookViewProps) {
     </div>
   );
 
-  // Subsequent pages: Split sections
-  chapter.sections.forEach((sect, sIdx) => {
-    pages.push(
-      <div key={sect.id} className="h-full bg-card p-8 flex flex-col justify-between text-foreground border-r border-border shadow-inner">
-        <div className="space-y-3">
-          <span className="text-[10px] text-primary uppercase font-bold tracking-wider">
-            Section {chapter.number}.{sIdx + 1}
-          </span>
-          <h3 className="text-lg font-heading font-bold text-foreground border-b border-border pb-2">
-            {sect.title}
-          </h3>
-          <div className="space-y-2 text-xs md:text-sm text-foreground/90 leading-relaxed font-medium">
-            {sect.content.map((block, bIdx) => {
-              if (block.type === 'text' && block.text) {
-                return <p key={bIdx}>{block.text.substring(0, 300)}...</p>;
-              }
-              if (block.type === 'robot-fact' && block.robotFact) {
-                return (
-                  <div key={bIdx} className="bg-primary/5 border border-primary/20 p-3 rounded-lg text-[11px] italic">
-                    <span className="font-bold text-primary block">Mascot Tip:</span>
-                    {block.robotFact.fact}
-                  </div>
-                );
-              }
-              if (block.type === 'did-you-know') {
-                return (
-                  <div key={bIdx} className="bg-amber-500/5 border border-amber-500/20 p-3 rounded-lg text-[11px]">
-                    <span className="font-bold text-accent block">{block.title}:</span>
-                    {block.text}
-                  </div>
-                );
-              }
-              return null;
-            })}
-          </div>
+  // Page 3: Dynamic MDX Content scrollable page
+  pages.push(
+    <div key="mdx-content" className="h-full bg-card p-8 flex flex-col justify-between text-foreground border-r border-border shadow-inner">
+      <div className="space-y-3 flex-1 overflow-y-auto max-h-[500px] pr-2 scrollbar-thin">
+        <span className="text-[10px] text-primary uppercase font-bold tracking-wider">
+          Chapter {chapter.chapterNumber} Contents
+        </span>
+        <h3 className="text-lg font-heading font-bold text-foreground border-b border-border pb-2">
+          Lesson Text & Activities
+        </h3>
+        <div className="prose dark:prose-invert text-xs md:text-sm leading-relaxed font-medium">
+          <ChapterContent />
         </div>
-        <div className="text-right text-[10px] text-muted-foreground">Page {pages.length}</div>
       </div>
-    );
-  });
+      <div className="text-right text-[10px] text-muted-foreground">Page 2</div>
+    </div>
+  );
 
   // Final page: Summary
+  const summaryPoints = chapter.summary && chapter.summary.length > 0
+    ? chapter.summary
+    : [
+        "Congratulations on reading this chapter!",
+        "Review the key definitions and try the mini-project activity.",
+        "When you are ready, advance to the next chapter in your textbook!"
+      ];
+
   pages.push(
     <div className="h-full bg-gradient-to-br from-indigo-900 to-slate-900 p-8 flex flex-col justify-between text-white shadow-inner">
       <div className="space-y-4">
@@ -127,7 +116,7 @@ export function FlipbookView({ chapter }: FlipbookViewProps) {
           Chapter Summary
         </h3>
         <ul className="space-y-2.5">
-          {chapter.summary.map((point, idx) => (
+          {summaryPoints.map((point: string, idx: number) => (
             <li key={idx} className="flex gap-2 text-xs text-white/80 leading-relaxed">
               <span className="text-accent font-bold shrink-0">•</span>
               <span>{point}</span>
@@ -135,7 +124,7 @@ export function FlipbookView({ chapter }: FlipbookViewProps) {
           ))}
         </ul>
       </div>
-      <div className="text-right text-[10px] text-white/50">Page {pages.length}</div>
+      <div className="text-right text-[10px] text-white/50">Page 3</div>
     </div>
   );
 

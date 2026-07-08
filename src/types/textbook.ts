@@ -65,7 +65,6 @@ export interface ContentBlock {
   text?: string;
   list?: string[];
   imageUrl?: string;
-  // Specific card types
   quiz?: QuizData;
   vocabulary?: VocabularyData;
   miniProject?: MiniProjectData;
@@ -81,15 +80,25 @@ export interface Section {
   content: ContentBlock[];
 }
 
-export interface Chapter {
+export interface ChapterMetadata {
+  title: string;
+  chapterNumber: number;
+  readingTime: number; // in minutes
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  learningObjectives: string[];
+  keywords: string[];
+  coverImage?: string;
+  sections?: { id: string; title: string }[];
+}
+
+export interface ChapterRef {
   id: string;
   number: number;
   title: string;
   description: string;
-  readingTime: number; // in minutes
-  learningObjectives: string[];
-  sections: Section[];
-  summary: string[];
+  readingTime: number;
+  slug: string;
+  contentPath: string; // e.g. "class1/chapter1"
 }
 
 export interface Book {
@@ -102,5 +111,11 @@ export interface Book {
   coverColor: string; // e.g., gradient css class
   accentColor: string; // Tailwind color class name
   iconName: string; // Lucide icon name
-  chapters: Chapter[];
+  chapters: ChapterRef[];
+}
+
+export interface Chapter extends ChapterMetadata {
+  id: string;
+  sections: Section[];
+  summary: string[];
 }

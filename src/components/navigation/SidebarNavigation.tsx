@@ -3,12 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { CheckCircle2, Circle, FileText, Printer } from 'lucide-react';
-import { Book, Chapter } from '@/types/textbook';
+import { Book } from '@/types/textbook';
 import { TableOfContents } from '@/components/textbook/TableOfContents';
 
 interface SidebarNavigationProps {
   book: Book;
-  chapter: Chapter;
+  chapter: any;
   completedChapters: string[];
   activeSectionId?: string;
   isChapterCompleted: boolean;
@@ -23,6 +23,18 @@ export function SidebarNavigation({
   isChapterCompleted,
   onToggleCompletion,
 }: SidebarNavigationProps) {
+  const chaptersForTOC = React.useMemo(() => {
+    return book.chapters.map((c) => {
+      if (c.id === chapter.id) {
+        return {
+          ...c,
+          sections: chapter.sections || [],
+        };
+      }
+      return c;
+    });
+  }, [book.chapters, chapter.id, chapter.sections]);
+
   return (
     <div className="sticky top-20 space-y-6 border border-border/80 bg-card rounded-2xl p-5 shadow-sm max-h-[calc(100vh-120px)] overflow-y-auto no-print">
       {/* Book Info Block */}
@@ -37,7 +49,7 @@ export function SidebarNavigation({
 
       {/* Table of Contents */}
       <TableOfContents
-        chapters={book.chapters}
+        chapters={chaptersForTOC}
         classId={book.classId}
         completedChapters={completedChapters}
         activeChapterId={chapter.id}

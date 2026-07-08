@@ -6,10 +6,11 @@ import { Search, Library, Layers } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { BookCover } from '@/components/textbook/BookCover';
-import { BOOKS } from '@/config/books';
+import { getBooks } from '@/lib/mdx';
 import Link from 'next/link';
 
 function LibraryCatalog() {
+  const BOOKS = getBooks();
   const searchParams = useSearchParams();
   const initialSearch = searchParams.get('search') || '';
 

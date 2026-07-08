@@ -1,0 +1,17 @@
+{
+  "title": "Introduction to Artificial Intelligence",
+  "chapterNumber": 1,
+  "readingTime": 20,
+  "difficulty": "Advanced",
+  "learningObjectives": [
+    "Analyze the mathematical difference between classical programming and machine learning.",
+    "Distinguish between Supervised, Unsupervised, and Reinforcement Learning.",
+    "Evaluate real-world AI applications and their ethical implications on privacy and labor."
+  ],
+  "keywords": ["Artificial Intelligence", "Turing Test", "Machine Learning", "Gradient Descent", "Supervised Learning"],
+  "coverImage": "",
+  "sections": [
+    { "id": "1-1", "title": "What makes an AI Intelligent?" },
+    { "id": "1-2", "title": "Paradigms of Machine Learning" }
+  ]
+}

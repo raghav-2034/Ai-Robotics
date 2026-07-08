@@ -4,25 +4,15 @@ import React, { use, useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getBookByClassId, getChapterById } from '@/config/books';
+import { getBook, getChapterMetadata, getChapterComponent } from '@/lib/mdx';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { ChapterMetadata } from '@/types/textbook';
 
 // Layout & Navigation Imports
 import { ReaderLayout } from '@/components/layout/ReaderLayout';
 import { ChapterLayout } from '@/components/layout/ChapterLayout';
 import { SidebarNavigation } from '@/components/navigation/SidebarNavigation';
-
-// Educational Cards Imports
-import { ActivityCard } from '@/components/cards/ActivityCard';
-import { StoryCard } from '@/components/cards/StoryCard';
-import { QuizCard } from '@/components/cards/QuizCard';
-import { VocabularyCard } from '@/components/cards/VocabularyCard';
-import { DidYouKnowCard } from '@/components/cards/DidYouKnowCard';
-import { RobotFactCard } from '@/components/cards/RobotFactCard';
-import { ChallengeCard } from '@/components/cards/ChallengeCard';
-import { MiniProjectCard } from '@/components/cards/MiniProjectCard';
-import { TeacherNoteCard } from '@/components/cards/TeacherNoteCard';
 
 interface ReaderPageProps {
   params: Promise<{ classId: string; chapterId: string }>;
@@ -32,8 +22,8 @@ export default function ReaderPage({ params }: ReaderPageProps) {
   const resolvedParams = use(params);
   const { classId, chapterId } = resolvedParams;
 
-  const book = getBookByClassId(classId);
-  const chapter = book ? getChapterById(book, chapterId) : null;
+  const book = getBook(classId);
+  const [chapterMetadata, setChapterMetadata] = useState<ChapterMetadata | null>(null);
 
   // Reading Scroll Progress State
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -46,17 +36,14 @@ export default function ReaderPage({ params }: ReaderPageProps) {
 
   const [mounted, setMounted] = useState(false);
 
-  // Active section tracking (scroll spy)
-  const sectionIds = useMemo(() => {
-    return chapter ? chapter.sections.map((sect) => sect.id) : [];
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chapter?.id]);
-
-  const activeSectionId = useActiveSection(sectionIds);
-
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
+
+    // Fetch metadata dynamically
+    getChapterMetadata(classId, chapterId)
+      .then(setChapterMetadata)
+      .catch((err) => console.error("Error loading chapter metadata:", err));
 
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -68,19 +55,47 @@ export default function ReaderPage({ params }: ReaderPageProps) {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [classId, chapterId]);
 
-  if (!book || !chapter) {
+  // Active section tracking (scroll spy)
+  const sectionIds = useMemo(() => {
+    return chapterMetadata && chapterMetadata.sections ? chapterMetadata.sections.map((sect) => sect.id) : [];
+  }, [chapterMetadata]);
+
+  const activeSectionId = useActiveSection(sectionIds);
+
+  const chapter = useMemo(() => {
+    if (!chapterMetadata) return null;
+    return {
+      id: chapterId,
+      number: chapterMetadata.chapterNumber, // Map metadata chapterNumber to number
+      ...chapterMetadata,
+      summary: [], // summary is now embedded in index.mdx or handled dynamically
+      sections: chapterMetadata.sections || [],
+    };
+  }, [chapterId, chapterMetadata]);
+
+  const ChapterContent = useMemo(() => {
+    return getChapterComponent(classId, chapterId);
+  }, [classId, chapterId]);
+
+  if (!book) {
     return (
       <div className="min-h-screen flex flex-col bg-background text-foreground justify-center items-center p-6 text-center">
         <BookOpen className="w-12 h-12 text-muted-foreground mb-4" />
-        <h2 className="text-2xl font-heading font-black">Chapter Not Found</h2>
-        <p className="text-sm text-muted-foreground mt-2">
-          The chapter you are looking for does not exist or has not been written yet.
-        </p>
+        <h2 className="text-2xl font-heading font-black">Book Not Found</h2>
         <Link href="/books" passHref className="mt-6">
           <Button variant="primary">Back to Catalog</Button>
         </Link>
+      </div>
+    );
+  }
+
+  if (!chapterMetadata || !chapter) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background text-foreground justify-center items-center p-6 text-center">
+        <BookOpen className="w-12 h-12 text-muted-foreground mb-4 animate-pulse" />
+        <h2 className="text-2xl font-heading font-black">Loading Chapter...</h2>
       </div>
     );
   }
@@ -123,82 +138,9 @@ export default function ReaderPage({ params }: ReaderPageProps) {
         nextChapter={nextChapter}
         mounted={mounted}
       >
-        {/* Render sections lists */}
-        {chapter.sections.map((section) => (
-          <section
-            id={section.id}
-            key={section.id}
-            className="space-y-6 scroll-mt-24 border-t border-border/50 pt-8 first:border-0 first:pt-0"
-          >
-            <h2 className="text-xl md:text-2xl font-heading font-extrabold text-foreground tracking-tight border-l-4 border-primary pl-3">
-              {section.title}
-            </h2>
-
-            <div className="space-y-4">
-              {section.content.map((block) => {
-                switch (block.type) {
-                  case 'text':
-                    return (
-                      <p
-                        key={block.id}
-                        className="text-sm md:text-base leading-relaxed text-foreground/90 font-medium"
-                      >
-                        {block.text}
-                      </p>
-                    );
-
-                  case 'activity':
-                    return block.activity ? (
-                      <ActivityCard key={block.id} activity={block.activity} />
-                    ) : null;
-
-                  case 'story':
-                    return block.story ? (
-                      <StoryCard key={block.id} story={block.story} />
-                    ) : null;
-
-                  case 'quiz':
-                    return block.quiz ? (
-                      <QuizCard key={block.id} quiz={block.quiz} />
-                    ) : null;
-
-                  case 'vocabulary':
-                    return block.vocabulary ? (
-                      <VocabularyCard key={block.id} vocabulary={block.vocabulary} />
-                    ) : null;
-
-                  case 'did-you-know':
-                    return block.text ? (
-                      <DidYouKnowCard key={block.id} text={block.text} title={block.title} />
-                    ) : null;
-
-                  case 'robot-fact':
-                    return block.robotFact ? (
-                      <RobotFactCard key={block.id} robotFact={block.robotFact} />
-                    ) : null;
-
-                  case 'challenge':
-                    return block.text ? (
-                      <ChallengeCard key={block.id} text={block.text} title={block.title} />
-                    ) : null;
-
-                  case 'mini-project':
-                    return block.miniProject ? (
-                      <MiniProjectCard key={block.id} miniProject={block.miniProject} />
-                    ) : null;
-
-                  case 'teacher-note':
-                    return block.teacherNote ? (
-                      <TeacherNoteCard key={block.id} teacherNote={block.teacherNote} />
-                    ) : null;
-
-                  default:
-                    return null;
-                }
-              })}
-            </div>
-          </section>
-        ))}
+        <div className="prose dark:prose-invert max-w-none">
+          <ChapterContent />
+        </div>
       </ChapterLayout>
     </ReaderLayout>
   );

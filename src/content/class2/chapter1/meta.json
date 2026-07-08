@@ -1,0 +1,16 @@
+{
+  "title": "Welcome to Class 2 Coursework",
+  "chapterNumber": 1,
+  "readingTime": 8,
+  "difficulty": "Intermediate",
+  "learningObjectives": [
+    "Understand the core pillars of Grade 2 curriculum.",
+    "Master basic tools and setup environments.",
+    "Demonstrate familiarity with interactive classroom modules."
+  ],
+  "keywords": ["Syllabus", "Classrooms", "Robotics"],
+  "coverImage": "",
+  "sections": [
+    { "id": "1-1", "title": "Getting Started" }
+  ]
+}

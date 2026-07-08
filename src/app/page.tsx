@@ -8,9 +8,10 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { BookCover } from '@/components/textbook/BookCover';
-import { BOOKS } from '@/config/books';
+import { getBooks } from '@/lib/mdx';
 
 export default function Home() {
+  const BOOKS = getBooks();
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
 

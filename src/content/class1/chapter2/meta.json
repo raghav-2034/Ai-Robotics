@@ -1,0 +1,16 @@
+{
+  "title": "Robots in Our World",
+  "chapterNumber": 2,
+  "readingTime": 12,
+  "difficulty": "Beginner",
+  "learningObjectives": [
+    "Recognize robots in daily environments (home, supermarkets, schools).",
+    "Describe how robots help doctors and firefighters in dangerous situations.",
+    "Understand that robots go where humans cannot easily reach, like Mars!"
+  ],
+  "keywords": ["Autonomous", "Home Robots", "Exploration", "LiDAR"],
+  "coverImage": "",
+  "sections": [
+    { "id": "2-1", "title": "Robots at Home and School" }
+  ]
+}

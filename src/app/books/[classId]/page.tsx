@@ -9,7 +9,7 @@ import { BookCover } from '@/components/textbook/BookCover';
 import { TableOfContents } from '@/components/textbook/TableOfContents';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
-import { getBookByClassId } from '@/config/books';
+import { getBook } from '@/lib/mdx';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 interface BookPageProps {
@@ -19,7 +19,7 @@ interface BookPageProps {
 export default function BookDetailPage({ params }: BookPageProps) {
   const resolvedParams = use(params);
   const classId = resolvedParams.classId;
-  const book = getBookByClassId(classId);
+  const book = getBook(classId);
 
   // Read student progress from local storage
   const [completedChapters] = useLocalStorage<string[]>(

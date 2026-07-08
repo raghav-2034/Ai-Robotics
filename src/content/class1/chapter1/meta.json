@@ -1,0 +1,13 @@
+{
+  "title": "Meet Miko the Robot",
+  "chapterNumber": 1,
+  "readingTime": 10,
+  "difficulty": "Beginner",
+  "learningObjectives": [
+    "Identify what a robot is and what it does.",
+    "Name the basic parts of Miko the robot (Sensors, Brain, Motors).",
+    "Distinguish between a living being, a mechanical toy, and a smart robot."
+  ],
+  "keywords": ["Miko", "Robots", "Sensors", "Motors", "Computer Brain"],
+  "coverImage": ""
+}

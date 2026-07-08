@@ -1,13 +1,14 @@
 'use client';
 
-import React, { use } from 'react';
+import React, { use, useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, FileText } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { FlipbookView } from '@/components/textbook/FlipbookView';
-import { getBookByClassId, getChapterById } from '@/config/books';
+import { getBook, getChapterMetadata } from '@/lib/mdx';
+import { ChapterMetadata } from '@/types/textbook';
 
 interface FlipbookPageProps {
   params: Promise<{ classId: string; chapterId: string }>;
@@ -17,22 +18,48 @@ export default function FlipbookPage({ params }: FlipbookPageProps) {
   const resolvedParams = use(params);
   const { classId, chapterId } = resolvedParams;
 
-  const book = getBookByClassId(classId);
-  const chapter = book ? getChapterById(book, chapterId) : null;
+  const book = getBook(classId);
+  const [chapterMetadata, setChapterMetadata] = useState<ChapterMetadata | null>(null);
 
-  if (!book || !chapter) {
+  useEffect(() => {
+    getChapterMetadata(classId, chapterId)
+      .then(setChapterMetadata)
+      .catch((err) => console.error("Error loading chapter metadata:", err));
+  }, [classId, chapterId]);
+
+  const chapter = useMemo(() => {
+    if (!chapterMetadata) return null;
+    return {
+      id: chapterId,
+      ...chapterMetadata,
+      sections: chapterMetadata.sections || [],
+      summary: [], // summary handled in MDX content or empty
+    };
+  }, [chapterId, chapterMetadata]);
+
+  if (!book) {
     return (
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Navbar />
         <main className="flex-1 flex flex-col items-center justify-center p-6 text-center">
           <BookOpen className="w-12 h-12 text-muted-foreground mb-4" />
-          <h2 className="text-2xl font-heading font-black">Chapter Not Found</h2>
-          <p className="text-sm text-muted-foreground mt-2">
-            The chapter you are trying to view in the Flipbook does not exist.
-          </p>
+          <h2 className="text-2xl font-heading font-black">Book Not Found</h2>
           <Link href="/books" passHref className="mt-6">
             <Button variant="primary">Back to Catalog</Button>
           </Link>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!chapterMetadata || !chapter) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background text-foreground">
+        <Navbar />
+        <main className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+          <BookOpen className="w-12 h-12 text-muted-foreground mb-4 animate-pulse" />
+          <h2 className="text-2xl font-heading font-black">Loading Flipbook...</h2>
         </main>
         <Footer />
       </div>
