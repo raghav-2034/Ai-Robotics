@@ -73,22 +73,26 @@ function LibraryCatalog() {
           >
             All Classes
           </button>
-          {Array.from({ length: 9 }, (_, i) => {
-            const classId = `class-${i + 1}`;
-            return (
+          {BOOKS.reduce((acc, book) => {
+            if (!acc.some((b) => b.classId === book.classId)) {
+              acc.push(book);
+            }
+            return acc;
+          }, [] as typeof BOOKS)
+            .sort((a, b) => a.grade - b.grade)
+            .map((book) => (
               <button
-                key={classId}
-                onClick={() => setSelectedClass(classId)}
+                key={book.classId}
+                onClick={() => setSelectedClass(book.classId)}
                 className={`px-3 py-1.5 rounded-xl text-xs font-heading font-bold border transition-all shrink-0 cursor-pointer ${
-                  selectedClass === classId
+                  selectedClass === book.classId
                     ? 'bg-primary border-primary text-white'
                     : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground'
                 }`}
               >
-                Class {i + 1}
+                Class {book.grade}
               </button>
-            );
-          })}
+            ))}
         </div>
       </div>
 

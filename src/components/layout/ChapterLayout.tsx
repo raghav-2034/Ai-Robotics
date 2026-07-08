@@ -46,13 +46,17 @@ export function ChapterLayout({
       <div className="p-6 md:p-10 max-w-4xl mx-auto space-y-8">
         
         {/* Objectives */}
-        <LearningObjectiveCard objectives={chapter.learningObjectives} />
+        {chapter.learningObjectives && chapter.learningObjectives.length > 0 && (
+          <LearningObjectiveCard objectives={chapter.learningObjectives} />
+        )}
 
         {/* Content sections child list */}
         <div className="space-y-8">{children}</div>
 
         {/* Chapter Summary Takeaway Card */}
-        <SummaryCard summary={chapter.summary} />
+        {chapter.summary && chapter.summary.length > 0 && (
+          <SummaryCard summary={chapter.summary} />
+        )}
 
         {/* Mobile Completion Checkbox */}
         {mounted && (

@@ -112,6 +112,7 @@ export interface Book {
   accentColor: string; // Tailwind color class name
   iconName: string; // Lucide icon name
   chapters: ChapterRef[];
+  learningOutcomes?: string[];
 }
 
 export interface Chapter extends ChapterMetadata {

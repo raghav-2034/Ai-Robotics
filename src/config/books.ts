@@ -11,6 +11,11 @@ export const BOOKS: Book[] = [
     coverColor: 'from-blue-500 to-indigo-600',
     accentColor: 'blue',
     iconName: 'Bot',
+    learningOutcomes: [
+      'Understand what a robot is and how it functions.',
+      'Identify sensors, computer brains, and motor parts of smart agents.',
+      'Differentiate between humans, mechanical toys, and smart robots.'
+    ],
     chapters: [
       {
         id: 'chapter-1',
@@ -42,6 +47,11 @@ export const BOOKS: Book[] = [
     coverColor: 'from-purple-600 to-indigo-900',
     accentColor: 'purple',
     iconName: 'Cpu',
+    learningOutcomes: [
+      'Understand symbolic vs. connectionist paradigms in Artificial Intelligence.',
+      'Explain logic systems, neural networks, and decision machines.',
+      'Evaluate ethical, societal, and economic implications of AI automation.'
+    ],
     chapters: [
       {
         id: 'chapter-1',
@@ -82,6 +92,11 @@ export const BOOKS: Book[] = [
       coverColor: coverColor,
       accentColor: 'emerald',
       iconName: iconName,
+      learningOutcomes: [
+        `Understand key concepts of ${subject} in Class ${grade}.`,
+        `Apply core methodologies to digital programming challenges.`,
+        `Synthesize class knowledge into computational experiments.`
+      ],
       chapters: [
         {
           id: 'chapter-1',

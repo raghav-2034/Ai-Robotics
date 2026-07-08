@@ -13,6 +13,7 @@ interface SidebarNavigationProps {
   activeSectionId?: string;
   isChapterCompleted: boolean;
   onToggleCompletion: () => void;
+  dynamicHeadings?: { id: string; title: string; level: number }[];
 }
 
 export function SidebarNavigation({
@@ -22,6 +23,7 @@ export function SidebarNavigation({
   activeSectionId,
   isChapterCompleted,
   onToggleCompletion,
+  dynamicHeadings = [],
 }: SidebarNavigationProps) {
   const chaptersForTOC = React.useMemo(() => {
     return book.chapters.map((c) => {
@@ -55,6 +57,7 @@ export function SidebarNavigation({
         activeChapterId={chapter.id}
         activeSectionId={activeSectionId}
         compact={true}
+        dynamicHeadings={dynamicHeadings}
       />
 
       {/* Completion Trigger */}

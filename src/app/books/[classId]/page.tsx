@@ -91,10 +91,14 @@ export default function BookDetailPage({ params }: BookPageProps) {
 
           {/* Metadata & Progress Right Column */}
           <div className="md:col-span-2 space-y-6">
-            <div className="flex flex-wrap items-center gap-2 text-xs md:text-sm font-semibold uppercase">
+            <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-semibold uppercase">
               <span className="text-primary font-bold">{book.subject}</span>
               <span className="text-muted-foreground">•</span>
               <span className="text-accent font-bold">Class {book.grade} Curriculum</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold">{book.grade >= 8 ? 'Advanced' : book.grade >= 4 ? 'Intermediate' : 'Beginner'}</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-muted-foreground font-bold">{book.chapters.reduce((acc, c) => acc + c.readingTime, 0)} Mins Total</span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black tracking-tight leading-tight text-foreground">
@@ -104,6 +108,20 @@ export default function BookDetailPage({ params }: BookPageProps) {
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               {book.description}
             </p>
+
+            {book.learningOutcomes && book.learningOutcomes.length > 0 && (
+              <div className="space-y-3 pt-2">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">What You Will Learn</h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-foreground/95">
+                  {book.learningOutcomes.map((outcome, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-primary font-bold">✓</span>
+                      <span>{outcome}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Student Progress Tracker Box */}
             {mounted && (

@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { CheckCircle2, ChevronRight, Clock } from 'lucide-react';
-import { Chapter } from '@/types/textbook';
 import { cn } from '@/utils/cn';
 
 interface TableOfContentsProps {
@@ -13,6 +12,7 @@ interface TableOfContentsProps {
   activeChapterId?: string;
   activeSectionId?: string;
   compact?: boolean;
+  dynamicHeadings?: { id: string; title: string; level: number }[];
 }
 
 export function TableOfContents({
@@ -22,6 +22,7 @@ export function TableOfContents({
   activeChapterId,
   activeSectionId,
   compact = false,
+  dynamicHeadings = [],
 }: TableOfContentsProps) {
   
   if (compact) {
@@ -63,25 +64,56 @@ export function TableOfContents({
                 </Link>
 
                 {/* Subsections under active chapter */}
-                {isChapActive && chap.sections && (
+                {isChapActive && (
                   <div className="pl-6 border-l border-border/80 ml-5.5 py-1 space-y-1">
-                    {chap.sections.map((sect: any) => {
-                      const isSectActive = activeSectionId === sect.id;
-                      return (
-                        <a
-                          key={sect.id}
-                          href={`#${sect.id}`}
-                          className={cn(
-                            'block py-1.5 px-2 text-[11px] font-medium rounded transition-colors truncate cursor-pointer',
-                            isSectActive
-                              ? 'text-primary bg-primary/5 font-bold'
-                              : 'text-muted-foreground hover:text-foreground hover:bg-muted/40'
-                          )}
-                        >
-                          {sect.title}
-                        </a>
-                      );
-                    })}
+                    {dynamicHeadings.length > 0 ? (
+                      dynamicHeadings.map((sect) => {
+                        const isSectActive = activeSectionId === sect.id;
+                        const indentStyle = sect.level === 3 ? 'pl-4 text-[10px]' : 'pl-2 text-[11px]';
+                        
+                        return (
+                          <a
+                            key={sect.id}
+                            href={`#${sect.id}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              document.getElementById(sect.id)?.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                              });
+                            }}
+                            className={cn(
+                              'block py-1 font-medium rounded transition-colors truncate cursor-pointer',
+                              indentStyle,
+                              isSectActive
+                                ? 'text-primary bg-primary/5 font-bold'
+                                : 'text-muted-foreground hover:text-foreground hover:bg-muted/40'
+                            )}
+                          >
+                            {sect.title}
+                          </a>
+                        );
+                      })
+                    ) : (
+                      // Fallback if headings haven't mounted yet
+                      chap.sections?.map((sect: any) => {
+                        const isSectActive = activeSectionId === sect.id;
+                        return (
+                          <a
+                            key={sect.id}
+                            href={`#${sect.id}`}
+                            className={cn(
+                              'block py-1.5 px-2 text-[11px] font-medium rounded transition-colors truncate cursor-pointer pl-2',
+                              isSectActive
+                                ? 'text-primary bg-primary/5 font-bold'
+                                : 'text-muted-foreground hover:text-foreground hover:bg-muted/40'
+                            )}
+                          >
+                            {sect.title}
+                          </a>
+                        );
+                      })
+                    )}
                   </div>
                 )}
               </div>
