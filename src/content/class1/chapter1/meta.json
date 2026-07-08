@@ -1,15 +1,15 @@
 {
-  "title": "What is Technology?",
+  "title": "Technology is Our Helper!",
   "chapterNumber": 1,
   "readingTime": 10,
   "difficulty": "Beginner",
   "learningObjectives": [
-    "Identify machines around us at home.",
-    "Understand how machines make chores easier.",
-    "Locate examples of technology at school.",
-    "Contrast older tools with modern technology."
+    "Find machines around me.",
+    "Tell how machines help us.",
+    "Find technology at school.",
+    "Compare old and new technology."
   ],
-  "keywords": ["Machine", "Technology", "Tool", "School", "Old vs New"],
+  "keywords": ["Machine", "Technology", "Home", "School", "Old vs New"],
   "coverImage": "",
   "sections": [
     { "id": "1-1", "title": "Machines Around Us" },

@@ -1,123 +1,150 @@
-# Image Plan: What is Technology?
+# Image Plan: Technology is Our Helper!
 
-Every illustration in this chapter follows a consistent **3D Claymation Toy style**: cute, rounded characters, soft plastic textures, warm lighting, and bright pastel color palettes.
+Every illustration in this textbook follows a consistent **3D Claymation Toy style**: cute, rounded characters, soft plastic textures, warm lighting, and bright pastel color palettes.
 
 ---
 
 ## Illustration 1: Cover Page
-*   **Title**: Adventure Begins
-*   **Purpose**: Introduce the chapter, show Leo and Miko the robot happy.
-*   **Position**: Top of the chapter (index.mdx top).
-*   **Image Size**: 1200 x 900 px (4:3 aspect ratio).
-*   **Illustration Style**: Cute 3D claymation, soft plastic render.
-*   **Character Description**: Leo (small 5-year-old boy, curly brown hair, red t-shirt) standing beside Miko (friendly white sphere robot on blue tires, large glowing eyes).
-*   **Background Description**: Minimal, solid pastel yellow background with warm studio lighting.
-*   **Objects to Include**: Colorful toy letters spelling "HELLO".
-*   **Color Theme**: Warm yellow, sky blue, soft red.
+*   **Title**: Technology is Our Helper!
+*   **Purpose**: Display a happy family using everyday machines at home.
+*   **Position**: Cover Page (Page 1).
+*   **Objects to Include**: Ceiling fan blowing air, washing machine with bubbles, television screen, laptop on table, a tiny bicycle, happy child smiling.
+*   **Background**: Clean, cozy pastel-colored living room.
+*   **Character Expressions**: Smiling, happy.
+*   **Colour Palette**: Warm yellows, teals, and soft reds.
 *   **AI Prompt**:
-    > *Prompt: Cute 3D claymation illustration of a curious 5-year-old boy with brown curly hair standing beside a small round white toy robot with large glowing blue eyes, happy expressions, soft plastic texture, warm studio light, clean solid pastel yellow background, high resolution --ar 4:3*
+    > *Prompt: Cute 3D claymation living room showing a happy family using everyday machines: a child in a red shirt near a bicycle, a mother near a washing machine with bubbles, a father typing on a laptop, and a ceiling fan spinning, soft plastic texture, warm lighting, minimalist style --ar 4:3*
 
 ---
 
-## Illustration 2: Story Time - Cleaning is Hard
-*   **Title**: Leo's Messy Room
-*   **Purpose**: Show the struggle of doing chores by hand without tools.
-*   **Position**: Inside Story Time section (Leo sweeping).
-*   **Image Size**: 800 x 600 px (4:3).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: Leo looking tired and holding a giant wooden broom that is bigger than him.
-*   **Background Description**: Bedroom floor with toy blocks scattered around.
-*   **Objects to Include**: Wooden broom, scattered toy blocks, small pile of dust.
-*   **Color Theme**: Soft brown, red, gray.
+## Illustration 2: Welcome Page
+*   **Title**: Hello Helpers
+*   **Purpose**: Introduce the concept of helper machines.
+*   **Position**: Welcome Page (Page 2).
+*   **Objects to Include**: Group of smiley machines (toaster, lamp, wall clock).
+*   **Background**: Soft solid pink canvas.
+*   **Colour Palette**: Pastel pinks, soft yellows.
 *   **AI Prompt**:
-    > *Prompt: Cute 3D claymation of a tired little boy in a red shirt holding a large wooden broom on a messy bedroom floor, toy blocks scattered around, clay model, soft plastic texture, minimalist background, warm lighting --ar 4:3*
+    > *Prompt: 3D claymation illustration of a group of friendly household appliances with smiling faces: a toaster, a table lamp, and a wall clock, cute cartoon style, soft textures, solid pastel pink background --ar 4:3*
 
 ---
 
-## Illustration 3: Story Time - The Vacuum Helper
-*   **Title**: Mom's Magic Machine
-*   **Purpose**: Introduce how a machine (vacuum cleaner) makes cleaning easy.
-*   **Position**: Story Time section (Mom using vacuum).
-*   **Image Size**: 800 x 600 px (4:3).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: Mom (happy, wearing an orange apron) holding a friendly-looking red vacuum cleaner that is sucking up dust with a smile.
-*   **Background Description**: Clean bedroom corner.
-*   **Objects to Include**: Red vacuum cleaner, sparkly floor, Mom smiling.
-*   **Color Theme**: Bright orange, red, mint green.
+## Illustration 3: Story Time - Busy Morning
+*   **Title**: Leo's Busy Morning
+*   **Purpose**: Establish story context.
+*   **Position**: Story Time (Page 3).
+*   **Objects to Include**: Leo in bed looking cool under a ceiling fan, Dad on a laptop, Mom loading a washing machine.
+*   **Background**: Cozy home interior.
+*   **Character Expressions**: Happy, content.
+*   **Colour Palette**: Soft morning blues, warm yellows.
 *   **AI Prompt**:
-    > *Prompt: Cute 3D claymation of a smiling mother using a red friendly vacuum cleaner to clean a floor, sparkling stars on clean floor, soft plastic texture, cute rounded shapes, clean warm pastel green background --ar 4:3*
+    > *Prompt: 3D claymation scene of a cozy home: a happy little boy named Leo under a spinning ceiling fan, in the background a mother uses a washing machine and a father uses a laptop, cute toy style, warm sun rays --ar 4:3*
 
 ---
 
-## Illustration 4: Section 1 - Smiley Toaster
-*   **Title**: The Breakfast Helper
-*   **Purpose**: Show an everyday machine in the kitchen.
-*   **Position**: Section 1: Machines Around Us.
-*   **Image Size**: 800 x 600 px (4:3).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: A cute yellow kitchen toaster with big cartoon eyes.
-*   **Background Description**: Minimal kitchen counter, clean layout.
-*   **Objects to Include**: Pop-up toast bread slices with small happy smiles on them.
-*   **Color Theme**: Bright yellow, warm orange, white.
+## Illustration 4: What is Technology?
+*   **Title**: Technology Showcase
+*   **Purpose**: Display everyday machines.
+*   **Position**: What is Technology section (Page 4).
+*   **Objects to Include**: Grid showing a fan, TV, laptop, bicycle, and washing machine.
+*   **Background**: Clean divided compartments.
+*   **Colour Palette**: Balanced pastel color grid.
 *   **AI Prompt**:
-    > *Prompt: Cute 3D claymation kitchen toaster with cartoon eyes, two slices of toast popping up with smiley faces on the bread, clay model, miniature toy style, soft colors, solid clean background --ar 4:3*
+    > *Prompt: Isometric 3D claymation grid showcasing five cute toy items: a fan, a television, a laptop, a bicycle, and a washing machine, each inside a separate pastel-colored box, soft plastic textures --ar 16:9*
 
 ---
 
-## Illustration 5: Section 2 - Wash Tub vs Washing Machine
-*   **Title**: Washing Clothes
-*   **Purpose**: Contrast hard manual labor with helper machines.
-*   **Position**: Section 2: How Machines Help Us.
-*   **Image Size**: 1200 x 600 px (2:1 aspect ratio).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: Split screen: Left side shows a wooden tub full of water and a scrub brush; Right side shows a modern washing machine with round glass doors and soap bubbles.
-*   **Background Description**: Minimal split pastel background (pink vs blue).
-*   **Objects to Include**: Wooden tub, scrub brush, modern washing machine, bubbles.
-*   **Color Theme**: Soft pink, sky blue, white soap bubbles.
+## Illustration 5: Machines Around Us
+*   **Title**: Kitchen Helpers
+*   **Purpose**: Engage children in searching for home machines.
+*   **Position**: Page 5.
+*   **Objects to Include**: Refrigerator, toaster, ceiling fan, wooden spoon (non-machine), cup (non-machine).
+*   **Background**: Cozy cartoon kitchen.
+*   **Colour Palette**: Pastel mint greens, warm wood.
 *   **AI Prompt**:
-    > *Prompt: Isometric 3D claymation split screen showing a simple wooden wash tub with water on the left, and a modern shiny washing machine with soap bubbles on the right, toy style, soft textures, pastel background --ar 16:9*
+    > *Prompt: Cozy 3D claymation kitchen scene with various items: a refrigerator, a toaster, a ceiling fan, a wooden spoon on a counter, and a ceramic cup, clean cute style, warm studio light --ar 4:3*
 
 ---
 
-## Illustration 6: Section 3 - Classroom Helper
-*   **Title**: Learning is Fun
-*   **Purpose**: Demonstrate classroom technology.
-*   **Position**: Section 3: Technology at School.
-*   **Image Size**: 800 x 600 px (4:3).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: A cute green school tablet sitting on a desk showing Miko the robot on the screen.
-*   **Background Description**: Classroom desk, soft shadows.
-*   **Objects to Include**: Tablet, pencil, notebook.
-*   **Color Theme**: Pastel green, warm yellow.
+## Illustration 6: Drawing Activity
+*   **Title**: Craft Table
+*   **Purpose**: Visual guide for drawing favorite machines.
+*   **Position**: Page 6.
+*   **Objects to Include**: Blank drawing page on a wooden table, wax crayons.
+*   **Background**: Clean table overview.
+*   **Colour Palette**: Bright rainbow crayons.
 *   **AI Prompt**:
-    > *Prompt: Cute 3D claymation tablet on a wooden school desk, screen shows a smiling robot mascot, soft plastic rendering, miniature classroom toy accessories, pastel yellow background --ar 4:3*
+    > *Prompt: Flatlay 3D claymation of a school drawing paper sitting on a wooden desk surrounded by colorful wax crayons, clean layout, bright colors, top-down perspective --ar 4:3*
 
 ---
 
-## Illustration 7: Section 4 - Mail vs Email
-*   **Title**: Old Letters and Smart Mails
-*   **Purpose**: Show the progression of communication tools.
-*   **Position**: Section 4: Old vs New Technology.
-*   **Image Size**: 800 x 600 px (4:3).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: An old paper letter envelope with a stamp next to a modern glowing blue email envelope icon.
-*   **Background Description**: Clean two-tone pastel background.
-*   **Objects to Include**: Paper envelope, post stamp, glowing email icon.
-*   **Color Theme**: Pale brown, glowing neon blue.
+## Illustration 7: How Machines Help Us
+*   **Title**: Washing Comparison
+*   **Purpose**: Visually contrast scrubbing by hand vs machine washing.
+*   **Position**: Page 7.
+*   **Objects to Include**: Wood tub, scrub board, modern washing machine.
+*   **Background**: Split pastel background.
+*   **Colour Palette**: Bubble blue, soft pink.
 *   **AI Prompt**:
-    > *Prompt: 3D claymation of an old paper letter envelope next to a modern glowing neon blue email icon, miniature toy model, soft textures, clean studio lighting, pastel blue background --ar 4:3*
+    > *Prompt: 3D claymation split illustration showing a wooden wash tub with a scrub board on a pink background, and a white washing machine surrounded by bubbles on a blue background, clear comparison --ar 16:9*
 
 ---
 
-## Illustration 8: Mini Project - Paper Box Helper
-*   **Title**: My Milk Carton Robot
-*   **Purpose**: Guide students on building a carton robot project.
-*   **Position**: Mini Project Section.
-*   **Image Size**: 800 x 600 px (4:3).
-*   **Illustration Style**: Cute 3D claymation.
-*   **Character Description**: A toy robot crafted out of a small blue paper carton, plastic bottle caps for eyes, and pipe cleaners for arms.
-*   **Background Description**: Table craft mat, soft background.
-*   **Objects to Include**: Carton robot, bottle caps, glue stick, pipe cleaners.
-*   **Color Theme**: Recycled blue, white, orange.
+## Illustration 8: Roleplay Activity
+*   **Title**: Soap and Water Roleplay
+*   **Purpose**: Show children acting out washing clothes in class.
+*   **Position**: Page 8.
+*   **Objects to Include**: Happy children pretending to scrub and spin.
+*   **Background**: Bright school gym or classroom.
+*   **Character Expressions**: Energetic, laughing.
+*   **Colour Palette**: Primary classroom colors.
 *   **AI Prompt**:
-    > *Prompt: 3D claymation close-up of a school craft project robot made from a blue milk carton and white plastic bottle caps for eyes, pipe cleaner arms, sitting on a colorful table craft mat, soft plastic texture --ar 4:3*
+    > *Prompt: 3D claymation of happy primary school children in a classroom laughing and pretending to spin like washing machines, play acting, soft plastic textures, bright cheerful lighting --ar 4:3*
+
+---
+
+## Illustration 9: Technology at School
+*   **Title**: Inside My Classroom
+*   **Purpose**: Display technology at school.
+*   **Position**: Page 9.
+*   **Objects to Include**: Computer, projector throwing a sun graphic, wall bell, printer.
+*   **Background**: Colorful cartoon classroom.
+*   **Colour Palette**: Pastel yellow, green.
+*   **AI Prompt**:
+    > *Prompt: Colorful 3D claymation classroom showing a computer on a desk, a projector on the ceiling showing a sun on a screen, a wall bell, and a printer, cute toy style, warm lighting --ar 4:3*
+
+---
+
+## Illustration 10: Old vs New - Communication
+*   **Title**: Evolving Tools
+*   **Purpose**: Display progression of tools.
+*   **Position**: Page 11.
+*   **Objects to Include**: Old dial telephone next to a modern smartphone.
+*   **Background**: Clean two-tone pastel partition.
+*   **Colour Palette**: Vintage brown next to bright glass screen blue.
+*   **AI Prompt**:
+    > *Prompt: 3D claymation of a vintage brown rotary telephone next to a modern sleek smartphone showing a chat icon, soft plastic texture, clean layout, pastel background --ar 4:3*
+
+---
+
+## Illustration 11: Vocabulary Symbols
+*   **Title**: Word Helpers
+*   **Purpose**: Display symbols for glossary terms.
+*   **Position**: Page 14.
+*   **Objects to Include**: A small computer screen icon, a cartoon fan icon, a cartoon schoolhouse icon.
+*   **Background**: Clean white grid boxes.
+*   **Colour Palette**: Teal and yellow.
+*   **AI Prompt**:
+    > *Prompt: 3D claymation style icons of a computer, a fan, and a schoolhouse, clean white background, cute rounded toy shapes, pastel colors --ar 4:3*
+
+---
+
+## Illustration 12: Mini Project - Helper Model
+*   **Title**: Carton Machine Craft
+*   **Purpose**: Guide students on building carton crafts.
+*   **Position**: Page 12.
+*   **Objects to Include**: Small milk carton craft box, plastic bottle caps.
+*   **Background**: Desk craft mat.
+*   **Colour Palette**: Recycled craft blue.
+*   **AI Prompt**:
+    > *Prompt: 3D claymation of a simple school craft machine made from a clean milk box carton with blue bottle cap wheels, sitting on a desk next to glue and scissors, warm lighting --ar 4:3*

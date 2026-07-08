@@ -2,31 +2,31 @@
   {
     "term": "Machine",
     "pronunciation": "/məˈʃiːn/",
-    "definition": "A tool made by humans to help us do work.",
-    "exampleSentence": "A toaster is a machine that warms our bread."
+    "definition": "A helper tool made by humans to do work.",
+    "exampleSentence": "A vacuum is a machine that cleans floors."
   },
   {
     "term": "Technology",
     "pronunciation": "/tɛkˈnɒl.ə.dʒi/",
-    "definition": "Helper tools made by humans to make life easier.",
-    "exampleSentence": "We use technology like tablets to learn inside the classroom."
+    "definition": "Helper tools that make work easier.",
+    "exampleSentence": "Using a laptop is modern technology."
   },
   {
-    "term": "Tool",
-    "pronunciation": "/tuːl/",
-    "definition": "An object we use to do a job.",
-    "exampleSentence": "A pencil is a tool we use to draw picture shapes."
+    "term": "Computer",
+    "pronunciation": "/kəmˈpjuː.tər/",
+    "definition": "A smart machine used to study and play.",
+    "exampleSentence": "We play learning games on the computer."
   },
   {
-    "term": "Power",
-    "pronunciation": "/ˈpaʊ.ər/",
-    "definition": "Energy that makes machines work, like electricity.",
-    "exampleSentence": "A vacuum cleaner needs power from a wall plug to clean."
+    "term": "Fan",
+    "pronunciation": "/fæn/",
+    "definition": "A machine that blows air to keep us cool.",
+    "exampleSentence": "Turn on the ceiling fan when it is warm."
   },
   {
-    "term": "Smart",
-    "pronunciation": "/smɑːrt/",
-    "definition": "Able to think, choose, or solve problems.",
-    "exampleSentence": "Miko is a smart robot because he can find his way around toys."
+    "term": "School",
+    "pronunciation": "/skuːl/",
+    "definition": "A happy place where we learn and play.",
+    "exampleSentence": "We use pencil sharpener tools at school."
   }
 ]
