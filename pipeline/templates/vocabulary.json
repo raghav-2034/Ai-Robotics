@@ -1,0 +1,14 @@
+[
+  {
+    "term": "Robot",
+    "pronunciation": "/ˈroʊ.bɒt/",
+    "definition": "A machine capable of carrying out a complex series of actions automatically, especially one programmable by a computer.",
+    "exampleSentence": "Miko is a helper robot that uses wheels to move and sensors to avoid walls."
+  },
+  {
+    "term": "Sensor",
+    "pronunciation": "/ˈsɛn.sər/",
+    "definition": "An input device that detects and responds to physical inputs from the surrounding environment.",
+    "exampleSentence": "The robot has a light sensor to detect when the sun goes down."
+  }
+]

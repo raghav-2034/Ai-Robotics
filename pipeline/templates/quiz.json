@@ -1,0 +1,26 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the primary function of a sensor on a robot?",
+    "options": [
+      "To decide what action to take next",
+      "To gather information and detect the surrounding environment",
+      "To provide electricity to the motors",
+      "To make the robot move around"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Sensors are used to detect changes in the environment (like light, sound, or distance) and send that data back to the computer brain."
+  },
+  {
+    "id": "q2",
+    "question": "Which component acts as the 'decision maker' or brain of the robot?",
+    "options": [
+      "The motor",
+      "The battery pack",
+      "The computer micro-controller board",
+      "The physical chassis frame"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The micro-controller (like Arduino or Raspberry Pi) runs program rules, processes input values, and acts as the brain."
+  }
+]

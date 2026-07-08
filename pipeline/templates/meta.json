@@ -1,0 +1,25 @@
+{
+  "title": "Chapter Title Placeholder",
+  "chapterNumber": 0,
+  "readingTime": 15,
+  "difficulty": "Beginner",
+  "learningObjectives": [
+    "Objective 1 details",
+    "Objective 2 details"
+  ],
+  "keywords": [
+    "Keyword1",
+    "Keyword2"
+  ],
+  "coverImage": "",
+  "sections": [
+    {
+      "id": "0-1",
+      "title": "Introduction to Concept"
+    },
+    {
+      "id": "0-2",
+      "title": "Interactive Activities and Projects"
+    }
+  ]
+}
