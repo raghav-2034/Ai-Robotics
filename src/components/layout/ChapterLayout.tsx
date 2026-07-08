@@ -1,0 +1,115 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { ArrowLeft, ArrowRight, CheckCircle2, Circle, CircleCheck } from 'lucide-react';
+import { Book, Chapter } from '@/types/textbook';
+import { ChapterHero } from '@/components/textbook/ChapterHero';
+import { LearningObjectiveCard } from '@/components/cards/LearningObjectiveCard';
+import { SummaryCard } from '@/components/cards/SummaryCard';
+import { Button } from '@/components/ui/button';
+
+interface ChapterLayoutProps {
+  book: Book;
+  chapter: Chapter;
+  isChapterCompleted: boolean;
+  onToggleCompletion: () => void;
+  prevChapter: Chapter | null;
+  nextChapter: Chapter | null;
+  mounted: boolean;
+  children: React.ReactNode;
+}
+
+export function ChapterLayout({
+  book,
+  chapter,
+  isChapterCompleted,
+  onToggleCompletion,
+  prevChapter,
+  nextChapter,
+  mounted,
+  children,
+}: ChapterLayoutProps) {
+  return (
+    <div className="rounded-2xl border border-border/50 bg-card overflow-hidden shadow-sm">
+      {/* Chapter Top Hero */}
+      <ChapterHero
+        classId={book.classId}
+        chapterNumber={chapter.number}
+        title={chapter.title}
+        description={chapter.description}
+        readingTime={chapter.readingTime}
+        subject={book.subject}
+      />
+
+      {/* Reading Flow Section */}
+      <div className="p-6 md:p-10 max-w-4xl mx-auto space-y-8">
+        
+        {/* Objectives */}
+        <LearningObjectiveCard objectives={chapter.learningObjectives} />
+
+        {/* Content sections child list */}
+        <div className="space-y-8">{children}</div>
+
+        {/* Chapter Summary Takeaway Card */}
+        <SummaryCard summary={chapter.summary} />
+
+        {/* Mobile Completion Checkbox */}
+        {mounted && (
+          <div className="lg:hidden py-4 border-t border-border no-print">
+            <button
+              onClick={onToggleCompletion}
+              className={`w-full flex items-center justify-center gap-2 text-xs font-heading font-extrabold uppercase border rounded-xl py-3.5 transition-all cursor-pointer ${
+                isChapterCompleted
+                  ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
+                  : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground'
+              }`}
+            >
+              {isChapterCompleted ? (
+                <>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  Completed Chapter
+                </>
+              ) : (
+                <>
+                  <Circle className="w-4 h-4" />
+                  Mark Chapter Completed
+                </>
+              )}
+            </button>
+          </div>
+        )}
+
+        {/* Reader Pagination Footer */}
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border/80 no-print">
+          {prevChapter ? (
+            <Link href={`/books/${book.classId}/${prevChapter.id}`} passHref>
+              <Button variant="outline" className="gap-2 cursor-pointer font-bold text-xs">
+                <ArrowLeft className="w-4 h-4" />
+                Prev: {prevChapter.title}
+              </Button>
+            </Link>
+          ) : (
+            <div />
+          )}
+
+          {nextChapter ? (
+            <Link href={`/books/${book.classId}/${nextChapter.id}`} passHref>
+              <Button variant="primary" className="gap-2 cursor-pointer font-bold text-xs">
+                Next: {nextChapter.title}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          ) : (
+            <Link href={`/books/${book.classId}`} passHref>
+              <Button variant="secondary" className="gap-2 cursor-pointer font-bold text-xs">
+                Finished book! Detail Page
+                <CircleCheck className="w-4 h-4 text-white" />
+              </Button>
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
