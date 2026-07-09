@@ -41,41 +41,41 @@ export function ActivityCard({ activity }: ActivityCardProps) {
 
   return (
     <motion.div
-      whileHover={{ y: -2 }}
+      whileHover={{ y: -1 }}
       transition={{ duration: 0.2 }}
-      className="edu-card overflow-hidden border border-secondary/20 bg-secondary/5 dark:bg-secondary/10 rounded-2xl p-6 my-6 shadow-sm hover:shadow-md transition-all duration-200"
+      className="edu-card overflow-hidden border-4 border-dashed border-secondary/40 bg-secondary/5 rounded-3xl p-6 md:p-8 my-6 shadow-sm print:border-solid print:border-2 print:border-slate-300"
     >
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-5 border-b border-secondary/15 pb-4">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-secondary/10 text-secondary rounded-xl">
+          <div className="p-2.5 bg-secondary/10 text-secondary rounded-2xl shrink-0">
             <ClipboardList className="w-5 h-5" />
           </div>
-          <h4 className="text-base md:text-lg font-heading font-bold text-foreground">
+          <h4 className="text-base md:text-lg font-heading font-black text-foreground uppercase tracking-tight">
             Activity: {title}
           </h4>
         </div>
 
         <div className="flex items-center gap-2">
           {/* Duration tag */}
-          <span className="flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full border border-border bg-card text-muted-foreground">
-            <Clock className="w-3 h-3" />
+          <span className="flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full border-2 border-slate-200 bg-white text-slate-600">
+            <Clock className="w-3.5 h-3.5" />
             {duration}
           </span>
           {/* Type tag */}
-          <span className={`flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full border ${typeConfig.bg}`}>
+          <span className={`flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full border-2 ${typeConfig.bg}`}>
             {typeConfig.icon}
             {typeConfig.label}
           </span>
         </div>
       </div>
 
-      <div className="space-y-2 mt-3 pl-1">
+      <div className="space-y-3 mt-4">
         {instructions.map((step, idx) => (
-          <div key={idx} className="flex gap-3 text-sm md:text-base text-foreground/90">
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-secondary/20 text-secondary font-bold text-xs shrink-0 mt-0.5">
+          <div key={idx} className="flex gap-3 text-sm md:text-base text-slate-700 font-medium">
+            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-white font-black text-xs shrink-0 mt-0.5 shadow-sm">
               {idx + 1}
             </span>
-            <span>{step}</span>
+            <span className="leading-relaxed">{step}</span>
           </div>
         ))}
       </div>

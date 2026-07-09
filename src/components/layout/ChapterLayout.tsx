@@ -31,42 +31,22 @@ export function ChapterLayout({
   children,
 }: ChapterLayoutProps) {
   return (
-    <div className="rounded-2xl border border-border/50 bg-card overflow-hidden shadow-sm">
-      {/* Chapter Top Hero */}
-      <ChapterHero
-        classId={book.classId}
-        chapterNumber={chapter.number}
-        title={chapter.title}
-        description={chapter.description}
-        readingTime={chapter.readingTime}
-        subject={book.subject}
-      />
-
+    <div className="w-full space-y-8 print:space-y-0">
       {/* Reading Flow Section */}
-      <div className="p-6 md:p-10 max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-8 print:space-y-0">
         
-        {/* Objectives */}
-        {chapter.learningObjectives && chapter.learningObjectives.length > 0 && (
-          <LearningObjectiveCard objectives={chapter.learningObjectives} />
-        )}
-
         {/* Content sections child list */}
-        <div className="space-y-8">{children}</div>
-
-        {/* Chapter Summary Takeaway Card */}
-        {chapter.summary && chapter.summary.length > 0 && (
-          <SummaryCard summary={chapter.summary} />
-        )}
+        <div className="space-y-8 print:space-y-0">{children}</div>
 
         {/* Mobile Completion Checkbox */}
         {mounted && (
-          <div className="lg:hidden py-4 border-t border-border no-print">
+          <div className="lg:hidden py-4 border-t border-slate-200 no-print">
             <button
               onClick={onToggleCompletion}
-              className={`w-full flex items-center justify-center gap-2 text-xs font-heading font-extrabold uppercase border rounded-xl py-3.5 transition-all cursor-pointer ${
+              className={`w-full flex items-center justify-center gap-2 text-xs font-heading font-extrabold uppercase border rounded-2xl py-3.5 transition-all cursor-pointer ${
                 isChapterCompleted
                   ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
-                  : 'border-border bg-card text-muted-foreground hover:bg-muted hover:text-foreground'
+                  : 'border-slate-200 bg-white text-slate-500 hover:bg-slate-50 hover:text-slate-800'
               }`}
             >
               {isChapterCompleted ? (
@@ -85,10 +65,10 @@ export function ChapterLayout({
         )}
 
         {/* Reader Pagination Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border/80 no-print">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t-2 border-slate-200/80 no-print">
           {prevChapter ? (
             <Link href={`/books/${book.classId}/${prevChapter.id}`} passHref>
-              <Button variant="outline" className="gap-2 cursor-pointer font-bold text-xs">
+              <Button variant="outline" className="gap-2 cursor-pointer font-black text-xs rounded-2xl">
                 <ArrowLeft className="w-4 h-4" />
                 Prev: {prevChapter.title}
               </Button>
@@ -99,14 +79,14 @@ export function ChapterLayout({
 
           {nextChapter ? (
             <Link href={`/books/${book.classId}/${nextChapter.id}`} passHref>
-              <Button variant="primary" className="gap-2 cursor-pointer font-bold text-xs">
+              <Button variant="primary" className="gap-2 cursor-pointer font-black text-xs rounded-2xl">
                 Next: {nextChapter.title}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           ) : (
             <Link href={`/books/${book.classId}`} passHref>
-              <Button variant="secondary" className="gap-2 cursor-pointer font-bold text-xs">
+              <Button variant="secondary" className="gap-2 cursor-pointer font-black text-xs rounded-2xl">
                 Finished book! Detail Page
                 <CircleCheck className="w-4 h-4 text-white" />
               </Button>

@@ -9,10 +9,12 @@ import { ChallengeCard } from '@/components/cards/ChallengeCard';
 import { RobotFactCard } from '@/components/cards/RobotFactCard';
 import { LearningObjectiveCard } from '@/components/cards/LearningObjectiveCard';
 import { DidYouKnowCard } from '@/components/cards/DidYouKnowCard';
+import { TextbookPageFlow } from '@/components/layout/TextbookPageFlow';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
+    wrapper: ({ children }) => <TextbookPageFlow>{children}</TextbookPageFlow>,
     ActivityCard,
     StoryCard,
     QuizCard,

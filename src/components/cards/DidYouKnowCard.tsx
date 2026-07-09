@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Lightbulb } from 'lucide-react';
 
 interface DidYouKnowCardProps {
   title?: string;
@@ -10,23 +10,23 @@ interface DidYouKnowCardProps {
 
 export function DidYouKnowCard({ title = 'Did You Know?', text }: DidYouKnowCardProps) {
   return (
-    <div className="edu-card relative overflow-hidden border border-amber-500/20 bg-amber-500/5 dark:bg-amber-500/10 rounded-2xl p-6 my-6 shadow-sm">
+    <div className="edu-card relative overflow-hidden border-2 border-yellow-300 bg-yellow-50 rounded-3xl p-6 my-6 shadow-sm print:bg-white print:border-slate-300">
       {/* Background decoration bubble */}
-      <div className="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-amber-500/10 dark:bg-amber-500/5 blur-xl pointer-events-none" />
+      <div className="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-yellow-200/40 blur-xl pointer-events-none print:hidden" />
 
       <div className="flex gap-4 items-start relative z-10">
-        <div className="p-2.5 bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-xl shrink-0">
-          <Sparkles className="w-5 h-5 animate-pulse" />
+        <div className="p-2.5 bg-yellow-200/80 text-yellow-700 rounded-2xl shrink-0 shadow-sm">
+          <Lightbulb className="w-5 h-5 animate-bounce" />
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <div className="flex items-center gap-2">
-            <h4 className="font-heading font-bold text-base text-amber-700 dark:text-amber-400">
+            <h4 className="font-heading font-black text-base text-yellow-800 uppercase tracking-tight">
               {title}
             </h4>
           </div>
           
-          <p className="text-sm md:text-base leading-relaxed text-foreground/90 font-medium">
+          <p className="text-sm md:text-base leading-relaxed text-slate-700 font-medium">
             {text}
           </p>
         </div>
