@@ -16,7 +16,7 @@ export function Footer() {
               <Bot className="w-5 h-5" />
             </div>
             <span className="font-heading font-black text-lg text-foreground">
-              Nectra<span className="text-primary">Learn</span>
+              Omcentra
             </span>
           </div>
           <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
@@ -91,7 +91,7 @@ export function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-border/40 text-center text-xs text-muted-foreground font-medium">
-        <p>© {new Date().getFullYear()} Om-Nectra Publications. All rights reserved. Built with Next.js 16 & React 19.</p>
+        <p>© {new Date().getFullYear()} Omcentra Student Platform. All rights reserved. Built with Next.js 16 & React 19.</p>
       </div>
     </footer>
   );

@@ -241,11 +241,11 @@ export function TextbookPageFlow({ children }: TextbookPageFlowProps) {
 
             {/* Textbook Footer */}
             <footer className="flex items-center justify-between border-t-2 border-slate-200/40 pt-4 text-[9px] md:text-[10px] font-extrabold text-slate-400 uppercase tracking-widest print:text-slate-500 z-10">
-              <span>Om-Nectra Publications</span>
+              <span>Omcentra Student Platform</span>
               <span className="text-xs md:text-sm font-heading font-black text-primary px-4 py-1.5 bg-white rounded-full border border-slate-200/60 shadow-sm print:border-none print:bg-transparent">
                 Page {pageNum}
               </span>
-              <span className="lowercase font-bold">nectralearn.edu</span>
+              <span className="lowercase font-bold">omcentra.edu</span>
             </footer>
           </section>
         );

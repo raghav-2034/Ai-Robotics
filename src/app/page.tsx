@@ -39,7 +39,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8 relative z-10">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
               <Sparkles className="w-3 h-3 animate-spin-slow" />
-              Om-Nectra Interactive Publishing
+              Omcentra Student Platform
             </span>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-black tracking-tight leading-none text-foreground">
@@ -50,7 +50,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
-              Production-ready interactive textbooks for Class 1 to Class 9. Empowering young learners with data-driven activities, quizzes, lab manuals, and 3D flipbooks.
+              Empowering students through new technologies. Production-ready interactive textbooks for Class 1 to Class 9, loaded with visual exercises, activities, and 3D flipbooks.
             </p>
 
             {/* Central Search Form */}

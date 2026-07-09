@@ -81,7 +81,7 @@ export default function PrintPage({ params }: PrintPageProps) {
       {/* Book Cover Sheet / Cover Page (Will break after) */}
       <article className="print-page-break max-w-4xl mx-auto border-2 border-black rounded-3xl p-16 flex flex-col justify-between aspect-[1/1.41] mb-12">
         <div className="space-y-2 border-b border-black pb-4">
-          <span className="text-xs font-bold tracking-widest uppercase">Om-Nectra Print Publications</span>
+          <span className="text-xs font-bold tracking-widest uppercase">Omcentra Print Publications</span>
           <h1 className="text-4xl font-black">{book.title}</h1>
         </div>
 
@@ -123,7 +123,7 @@ export default function PrintPage({ params }: PrintPageProps) {
 
       {/* Print Footer Page numbers */}
       <footer className="max-w-4xl mx-auto mt-16 pt-4 border-t border-gray-300 text-center text-xs text-gray-400 uppercase font-bold">
-        <span>© Om-Nectra Publications — Interactive AI & Robotics — Class {book.grade} Edition</span>
+        <span>© Omcentra Student Platform — Interactive AI & Robotics — Class {book.grade} Edition</span>
       </footer>
 
     </div>

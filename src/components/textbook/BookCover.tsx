@@ -68,7 +68,7 @@ export function BookCover({ title, grade, subject, coverColor, iconName, interac
         </h3>
         
         <div className="pt-2.5 border-t border-white/10 flex justify-between items-center text-[9px] md:text-xs text-white/70 font-semibold uppercase">
-          <span>Om-Nectra Pubs</span>
+          <span>Omcentra</span>
           <span>Class {grade} Edition</span>
         </div>
       </div>

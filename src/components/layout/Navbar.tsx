@@ -31,10 +31,10 @@ export function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-black tracking-tight text-base md:text-lg text-foreground leading-none">
-              Nectra<span className="text-primary">Learn</span>
+              Omcentra
             </span>
             <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest leading-none mt-0.5">
-              Interactive Books
+              Student Platform
             </span>
           </div>
         </Link>

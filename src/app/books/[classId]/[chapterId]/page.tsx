@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: ReaderPageProps): Promise<Met
         description,
         url,
         type: 'article',
-        siteName: 'NectraLearn',
-        authors: ['NectraLearn Publishing'],
+        siteName: 'Omcentra Student Platform',
+        authors: ['Omcentra Publishing'],
       },
       twitter: {
         card: 'summary_large_image',
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: ReaderPageProps): Promise<Met
     };
   } catch (e) {
     return {
-      title: 'Interactive Textbook Reader - NectraLearn',
+      title: 'Interactive Textbook Reader - Omcentra',
       description: 'Production-grade digital publishing platform.',
     };
   }
